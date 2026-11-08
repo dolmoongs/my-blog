@@ -1,0 +1,161 @@
+/* 마크다운 본문(.prose). 가독성이 최우선이라 장식은 최소로 둔다. */
+
+.prose > :first-child {
+  margin-top: 0;
+}
+
+.prose > :last-child {
+  margin-bottom: 0;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  margin: 2.25em 0 0.75em;
+  scroll-margin-top: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.prose h1 {
+  font-size: 1.875rem;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+}
+
+.prose h4,
+.prose h5,
+.prose h6 {
+  font-size: 1.0625rem;
+}
+
+.prose h6 {
+  color: var(--text-muted);
+}
+
+.prose p,
+.prose ul,
+.prose ol,
+.prose blockquote,
+.prose pre,
+.prose .table-wrap {
+  margin: 0 0 1.25em;
+}
+
+/* ---------- 목록 ---------- */
+
+.prose ul,
+.prose ol {
+  padding-left: 1.5em;
+}
+
+.prose li + li {
+  margin-top: 0.25em;
+}
+
+.prose li > ul,
+.prose li > ol {
+  margin: 0.25em 0 0;
+}
+
+.prose li > p {
+  margin-bottom: 0.5em;
+}
+
+/* ---------- 인용문 ---------- */
+
+.prose blockquote {
+  margin-inline: 0;
+  padding: 0.125em 1em;
+  border-left: 4px solid var(--quote-border);
+  color: var(--text-muted);
+}
+
+.prose blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- 코드 ---------- */
+
+.prose code {
+  padding: 0.125em 0.375em;
+  border-radius: 0.3125rem;
+  background: var(--surface);
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  word-break: normal;
+}
+
+/* 긴 코드는 페이지가 아니라 코드 블록 안에서만 가로로 스크롤한다. */
+.prose pre {
+  overflow-x: auto;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  line-height: 1.6;
+  tab-size: 4;
+  -webkit-overflow-scrolling: touch;
+}
+
+.prose pre code {
+  padding: 0;
+  background: none;
+  font-size: 0.875rem;
+  white-space: pre;
+  overflow-wrap: normal;
+}
+
+/* ---------- 표 ---------- */
+
+.prose .table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.prose th,
+.prose td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.prose th {
+  background: var(--surface);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ---------- 기타 ---------- */
+
+.prose hr {
+  margin: 2.5em 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
+.prose img {
+  display: block;
+  margin: 1.5em auto;
+  border-radius: var(--radius);
+}
+
+.prose a {
+  text-decoration-thickness: 0.0625em;
+}

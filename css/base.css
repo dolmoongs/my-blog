@@ -1,0 +1,106 @@
+/* 디자인 토큰과 기본 스타일. 색상은 이 파일에서만 정의한다. */
+
+:root {
+  color-scheme: light;
+
+  --bg: #fbfbfa;
+  --surface: #f3f2ef;
+  --text: #1f2328;
+  --text-muted: #5b6470;
+  --border: #e4e2dd;
+  --accent: #2557d6;
+  --accent-hover: #1a43ad;
+  --quote-border: #cfcbc2;
+
+  --font-sans: system-ui, -apple-system, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+
+  --radius: 0.5rem;
+  --content-width: 42rem;
+  --gutter: 1rem;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #16181d;
+  --surface: #1f2229;
+  --text: #e4e6ea;
+  --text-muted: #9aa3af;
+  --border: #2e323b;
+  --accent: #7aa2ff;
+  --accent-hover: #a3bdff;
+  --quote-border: #3d424d;
+}
+
+@media (min-width: 40rem) {
+  :root {
+    --gutter: 1.5rem;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.35;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* 라우트 전환 때 코드로 포커스를 옮기는 대상(main)에는 테두리를 그리지 않는다. */
+[tabindex="-1"]:focus {
+  outline: none;
+}

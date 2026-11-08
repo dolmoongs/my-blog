@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="마크다운으로 쓰는 블로그">
+  <title>my-blog</title>
+
+  <!-- 첫 렌더 전에 테마를 정해 라이트→다크 깜빡임(FOUC)을 막는다. 저장값 > OS 설정 순. -->
+  <script>
+    {
+      let theme = null;
+      try { theme = localStorage.getItem('theme'); } catch {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = theme;
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/prose.css">
+</head>
+<body>
+  <a class="skip-link" href="#app">본문으로 건너뛰기</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-title" href="#/">my-blog</a>
+      <button class="theme-toggle" type="button" aria-label="다크 모드" aria-pressed="false">
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+        </svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="app" class="container" tabindex="-1">
+    <noscript>이 블로그를 보려면 JavaScript를 켜 주세요.</noscript>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>마크다운으로 만든 블로그</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

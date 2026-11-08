@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Claude Code 개인 설정
+.claude/settings.local.json
+
+# 이 프로젝트는 빌드/패키지 단계가 없으므로 아래가 생기면 실수로 만든 것
+node_modules/
+package-lock.json
